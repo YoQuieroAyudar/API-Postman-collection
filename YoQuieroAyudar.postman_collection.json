@@ -40,6 +40,15 @@
 			"collectionId": "09d6cbde-6d3a-c706-5d35-ed4552146785"
 		},
 		{
+			"id": "7af4b8b6-4117-ea18-3de0-30f27512b792",
+			"name": "Recover password",
+			"description": "",
+			"order": [
+				"d707a431-3112-359a-f743-65b03fe27c6c"
+			],
+			"owner": "1459301"
+		},
+		{
 			"owner": "1459301",
 			"lastUpdatedBy": "455020",
 			"lastRevision": 255085594,
@@ -508,6 +517,25 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0"
+		},
+		{
+			"id": "d707a431-3112-359a-f743-65b03fe27c6c",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{url}}/recover_password",
+			"preRequestScript": "postman.setEnvironmentVariable(\"USER_EMAIL\", \"boolow5@hotmail.com\")",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar result = tv4.validateResult(jsonData, {\n    \"type\": \"object\",\n        \"properties\": {\n        \"message\": \"string\"\n    },\n    \"required\": [\"message\"]\n});\nif(!result.valid){ tests[result.error.message] = false; } else { tests[\"Valid data\"] = true; }\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1492585300925,
+			"name": "recover password",
+			"description": "",
+			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0",
+			"responses": [],
+			"rawModeData": "{\r\n    \"mail\" : \"{{USER_EMAIL}}\"\r\n}\r\n"
 		},
 		{
 			"folder": "54c084a3-e8d1-0178-4a2c-316297821b87",
