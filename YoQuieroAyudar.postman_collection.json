@@ -7,7 +7,8 @@
 		"baffe2b5-e8f6-b663-2ee5-e61c48c2bf7d",
 		"45e7cd39-88df-96d9-bcc3-fed25349f8d5",
 		"f1d8ab8f-abb8-1fba-d00e-e6f0380735c7",
-		"c9bc0f91-be6f-2394-29e4-34cdcb57a241"
+		"c9bc0f91-be6f-2394-29e4-34cdcb57a241",
+		"32c36af6-cf9f-0a07-f8f0-29e45a7c8da9"
 	],
 	"folders": [
 		{
@@ -62,7 +63,8 @@
 				"ee961533-1274-6ad8-4d12-7ea1fbd20c69",
 				"fc3faa77-1ef7-b6ac-bc29-b2df64d1ea68",
 				"d1ab9571-80ac-8be3-773e-c19df6c8cd66",
-				"c72159e5-8fa6-80dd-da26-f9d908a40f86"
+				"c72159e5-8fa6-80dd-da26-f9d908a40f86",
+				"0fd73d5d-20b8-2e3b-b0f7-a5970e67bc06"
 			]
 		},
 		{
@@ -96,6 +98,18 @@
 			"name": "new",
 			"description": "",
 			"order": []
+		},
+		{
+			"owner": "1459301",
+			"lastUpdatedBy": "455020",
+			"lastRevision": 255085594,
+			"id": "70525bb4-1a5d-55e8-4d1d-263857ed6031",
+			"name": "twitter sync",
+			"description": "",
+			"order": [
+				"f1c962ac-546b-04b8-180e-cd87e4e91cdd"
+			],
+			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0"
 		}
 	],
 	"timestamp": 0,
@@ -121,6 +135,25 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0"
+		},
+		{
+			"id": "0fd73d5d-20b8-2e3b-b0f7-a5970e67bc06",
+			"headers": "Content-Type: application/json\n",
+			"url": "{{url}}/signup_twitter_asso",
+			"preRequestScript": "var time = (new Date().getTime())/1000\r\npostman.setEnvironmentVariable(\"ASSO_EMAIL\", \"boolow5@hotmail.com\")\r\npostman.setEnvironmentVariable(\"ASSO_PASSWORD\", \"newpassword\")",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar result = tv4.validateResult(jsonData, {\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\" : \"string\"\n    },\n    \"required\": [\"message\"]\n});\nif(!result.valid){ tests[result.error.message] = false; } else { tests[\"Valid data\"] = true; }",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1494334088859,
+			"name": "signup twitter ASSO",
+			"description": "",
+			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0",
+			"responses": [],
+			"rawModeData": "{\r\n    \"mail\" : \"{{ASSO_EMAIL}}\",\r\n    \"password\" : \"{{ASSO_PASSWORD}}\",\r\n    \"token\" : \"{{MAGIC_TOKEN}}\",\r\n    \"bank_account_iban\" : \"{{ASSO_IBAN}}\",\r\n    \"bank_account_bic\" : \"{{ASSO_BIC}}\",\r\n    \"first_name\" : \"John\",\r\n    \"last_name\" : \"Rambo\",\r\n    \"birthday\" : \"2002-10-02T15:00:00Z\",\r\n    \"nationality\" : \"FR\",\r\n    \"country_of_residence\" : \"FR\"\r\n}"
 		},
 		{
 			"folder": "c48dd093-c61e-d3cf-f9df-a75c78fee4cb",
@@ -218,6 +251,27 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0"
+		},
+		{
+			"id": "32c36af6-cf9f-0a07-f8f0-29e45a7c8da9",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{ADMIN_TOKEN}}\n",
+			"url": "{{url}}/twitter_sync",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0",
+			"data": [],
+			"dataMode": "raw",
+			"name": "twitter sync copy",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1493393543696,
+			"version": 2,
+			"responses": [],
+			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar result = tv4.validateResult(jsonData, {\n    \"type\": \"object\",\n        \"properties\": {\n        \"entity\": \"string\"\n    },\n    \"required\": [\"entity\"]\n});\nif(!result.valid){ tests[result.error.message] = false; } else { tests[\"Valid data\"] = true; \n    \n}\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": ""
 		},
 		{
 			"folder": "54c084a3-e8d1-0178-4a2c-316297821b87",
@@ -596,6 +650,25 @@
 			"helperAttributes": "{}",
 			"responses": [],
 			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0"
+		},
+		{
+			"id": "f1c962ac-546b-04b8-180e-cd87e4e91cdd",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer {{ADMIN_TOKEN}}\n",
+			"url": "{{url}}/twitter_sync",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar result = tv4.validateResult(jsonData, {\n    \"type\": \"object\",\n        \"properties\": {\n        \"entity\": \"string\"\n    },\n    \"required\": [\"entity\"]\n});\nif(!result.valid){ tests[result.error.message] = false; } else { tests[\"Valid data\"] = true; \n    \n}\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493393562702,
+			"name": "twitter sync",
+			"description": "",
+			"collectionId": "2651d26b-a9d0-e2ea-723d-e0cbbc8d1bd0",
+			"responses": [],
+			"rawModeData": ""
 		},
 		{
 			"folder": null,
