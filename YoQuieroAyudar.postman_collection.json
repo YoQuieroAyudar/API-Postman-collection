@@ -615,7 +615,7 @@
 			"id": "ed96940d-c277-3695-6517-5cb2199935d7",
 			"headers": "Content-Type: application/json\n",
 			"url": "{{url}}/signup",
-			"preRequestScript": "var time = (new Date().getTime())/1000\r\npostman.setEnvironmentVariable(\"USER_EMAIL\", \"api-test-user-\" + time + \"@sejas.es\")\r\npostman.setEnvironmentVariable(\"USER_PASSWORD\", \"api-test-user-\" + time)",
+			"preRequestScript": "var time = (new Date().getTime())/1000\r\npostman.setEnvironmentVariable(\"USER_EMAIL\", \"api-test-user-\" + time + \"@microhuchasolidaria.org\")\r\npostman.setEnvironmentVariable(\"USER_PASSWORD\", \"api-test-user-\" + time)",
 			"pathVariables": {},
 			"method": "POST",
 			"data": [],
