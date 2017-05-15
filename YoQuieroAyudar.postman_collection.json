@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "YoQuieroAyudar copy",
-		"_postman_id": "8229829e-ee95-9aeb-7253-1c771bf271a8",
+		"_postman_id": "62b6b40e-0f3c-2b94-97b3-f18120c4a529",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -474,7 +474,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -702,7 +705,10 @@
 								"description": ""
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
 					},
 					"response": []
@@ -1376,7 +1382,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
