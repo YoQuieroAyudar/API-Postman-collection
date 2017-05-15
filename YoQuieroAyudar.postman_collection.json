@@ -366,9 +366,7 @@
 							"script": {
 								"type": "text/javascript",
 								"exec": [
-									"var time = (new Date().getTime())/1000\r",
-									"postman.setEnvironmentVariable(\"ASSO_EMAIL\", \"api-test-asso-\" + time + \"@example.com\")\r",
-									"postman.setEnvironmentVariable(\"ASSO_PASSWORD\", \"api-test-asso-\" + time)"
+									"var time = (new Date().getTime())/1000\r"
 								]
 							}
 						}
@@ -385,7 +383,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"mail\" : \"{{ASSO_EMAIL}}\",\r\n    \"password\" : \"{{ASSO_PASSWORD}}\",\r\n    \"name\" : \"name ASSO\",\r\n    \"status\" : \"ASSO\",\r\n    \"first_name\" : \"John\",\r\n    \"last_name\" : \"Rambo\",\r\n    \"birthday\" : \"2002-10-02T15:00:00Z\",\r\n    \"nationality\" : \"FR\",\r\n    \"country_of_residence\" : \"FR\",\r\n    \"asso_name\" : \"asso name\"\r\n}"
+							"raw": "{\r\n    \"mail\" : \"{{ASSO_EMAIL}}\",\r\n    \"password\" : \"{{ASSO_PASSWORD}}\",\r\n    \"name\" : \"{{ASSO_NAME}}\",\r\n    \"status\" : \"ASSO\",\r\n    \"first_name\" : \"{{ASSO_CONTACT_NAME}}\",\r\n    \"last_name\" : \"{{ASSO_CONTACT_SURNAME}}\",\r\n    \"birthday\" : \"{{ASSO_CONTACT_BIRTHDAY}}\",\r\n    \"nationality\" : \"{{ASSO_COUNTRY}}\",\r\n    \"country_of_residence\" : \"{{ASSO_COUNTRY}}\",\r\n    \"bank_account_iban\": \"{{ASSO_IBAN}}\",\r\n    \"bank_account_bic\": \"{{ASSO_BIC}}\",\r\n    \"country\": \"{{ASSO_COUNTRY}}\",\r\n    \"address\": \"{{ASSO_ADDRESS}}\",\r\n    \"description\": \"{{ASSO_DESC}}\",\r\n    \"logo_url\": \"{{ASSO_LOGO}}\",\r\n    \"twitter_username\": \"{{ASSO_TWITTER}}\"\r\n}"
 						},
 						"description": ""
 					},
